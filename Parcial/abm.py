@@ -1,6 +1,6 @@
-from validaciones import *
+from validaciones import validar_numero
 
-def agregar_heroe(lista) -> None:
+def agregar_heroe(lista:list) -> None:
     '''brief: Solicita datos de un nuevo heroe, valida cada campo y 
        lo agrega a la lista si es correcto.
        lista: Lista de listas donde se almacenan los héroes.
@@ -20,7 +20,7 @@ def agregar_heroe(lista) -> None:
     bandera = True
     while bandera:
         altura_str = input("Altura: ")
-        if es_numero(altura_str):
+        if validar_numero(altura_str):
             altura = float(altura_str)
             bandera = False
         else:
@@ -29,7 +29,7 @@ def agregar_heroe(lista) -> None:
     bandera = True
     while bandera:
         peso_str = input("Peso: ")
-        if es_numero(peso_str):
+        if validar_numero(peso_str):
             peso = float(peso_str)
             bandera = False
         else:
@@ -38,7 +38,7 @@ def agregar_heroe(lista) -> None:
     bandera = True
     while bandera:
         fuerza_str = input("Fuerza: ")
-        if es_numero(fuerza_str):
+        if validar_numero(fuerza_str):
             fuerza = int(fuerza_str)
             bandera = False
         else:
@@ -60,7 +60,7 @@ def agregar_heroe(lista) -> None:
     else:
         print("Datos inválidos, no se agregó el héroe.\n")
     
-def eliminar_heroe(lista) -> None:
+def eliminar_heroe(lista:list) -> None:
     '''brief: Elimina un heroe de la lista segun su nombre.
        lista: Lista de heroes.
        retorno: No retorna nada.
@@ -85,7 +85,7 @@ def mostrar_heroes(lista: list) -> None:
               "Empresa:", lista[i][2], "\n",
               "---------------------------")
 
-def ordenar_por_nombre(lista)->None:
+def ordenar_por_nombre(lista:list)->None:
     '''brief: Ordena la lista de heroes por nombre en orden alfabetico.
        lista: Lista de heroes.
        retorno: No retorna nada.
