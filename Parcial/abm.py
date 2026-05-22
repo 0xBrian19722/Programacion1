@@ -24,7 +24,7 @@ def agregar_heroe(lista:list) -> None:
             altura = float(altura_str)
             bandera = False
         else:
-            print("Error: la altura debe ser un numero válido.")
+            print("Error: la altura debe ser un numero valido.")
 
     bandera = True
     while bandera:
@@ -33,7 +33,7 @@ def agregar_heroe(lista:list) -> None:
             peso = float(peso_str)
             bandera = False
         else:
-            print("Error: el peso debe ser un numero válido.")
+            print("Error: el peso debe ser un numero valido.")
 
     bandera = True
     while bandera:
@@ -42,7 +42,7 @@ def agregar_heroe(lista:list) -> None:
             fuerza = int(fuerza_str)
             bandera = False
         else:
-            print("Error: la fuerza debe ser un número válido.")
+            print("Error: la fuerza debe ser un numero valido.")
 
     genero = input("Genero (M/F/NB): ")
     ojos = input("Color de ojos: ")
@@ -58,7 +58,7 @@ def agregar_heroe(lista:list) -> None:
                       ojos, pelo, fuerza, inteligencia])
         print("Héroe agregado con éxito.\n")
     else:
-        print("Datos inválidos, no se agregó el héroe.\n")
+        print("Datos invalidos, no se agrego el heroe.\n")
     
 def eliminar_heroe(lista:list) -> None:
     '''brief: Elimina un heroe de la lista segun su nombre.
@@ -91,10 +91,10 @@ def ordenar_por_nombre(lista:list)->None:
        retorno: No retorna nada.
     '''
     for i in range(len(lista)-1):
-        for j in range(i+1, len(lista)):
-            if lista[i][0] > lista[j][0]:
-                aux = lista[i]
-                lista[i] = lista[j]
-                lista[j] = aux
+        for j in range(len(lista)-1):
+             if lista[j] > lista[j+1]:
+              aux = lista[j]
+              lista[j] = lista[j+1]
+              lista[j+1] = aux
     print("Lista ordenada por nombre.\n")
 

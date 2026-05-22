@@ -17,7 +17,7 @@ while bandera:
 [5]- Ordenar por nombre
 [6]- Ver heroe mas alto
 [7}- Ver heroe mas fuerte
-[8]- Ver heroe menos pesado                        # documentar las funciones
+[8]- Ver heroe menos pesado                       
 [9]- Salir\n''')
 
     opcion = input("Seleccione una opcion: ")
@@ -47,17 +47,17 @@ while bandera:
             print("Primero debe importar la lista (opcion 1).\n")
     elif opcion == "6":
         if lista_heroes:
-            heroe_mas_alto(lista_heroes)
+            buscar_mas_alto(lista_heroes)
         else:
             print("Primero debe importar la lista (opcion 1).\n")
     elif opcion == "7":
         if lista_heroes:
-            heroe_mas_fuerte(lista_heroes)
+            buscar_mas_fuerte(lista_heroes)
         else:
             print("Primero debe importar la lista (opcion 1).\n")
     elif opcion == "8":
         if lista_heroes:
-            heroe_menos_pesado(lista_heroes)
+            buscar_menos_pesado(lista_heroes)
         else:
             print("Primero debe importar la lista (opcion 1).\n")
     elif opcion == "9":
