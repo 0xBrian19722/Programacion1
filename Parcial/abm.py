@@ -1,27 +1,11 @@
-def mostrar_heroes(lista: list) -> None:
-    for i in range(len(lista)):
-        print("Nombre:", lista[i][0], "\n",
-              "Identidad:", lista[i][1], "\n",
-              "Empresa:", lista[i][2], "\n",
-              "---------------------------")
-
-
-def es_numero(cadena: str) -> bool:
-    if cadena == "":
-        return False
-    punto = 0
-    for i in range(len(cadena)):   
-        caracter = cadena[i]
-        if caracter == ".":
-            punto += 1
-            if punto > 1:   
-                return False
-        elif caracter < "0" or caracter > "9":
-            return False
-    return True         
-
+from validaciones import *
 
 def agregar_heroe(lista) -> None:
+    '''brief: Solicita datos de un nuevo heroe, valida cada campo y 
+       lo agrega a la lista si es correcto.
+       lista: Lista de listas donde se almacenan los héroes.
+       retorno: No retorna nada.
+    '''
     nombre = input("Nombre: ")
     identidad = input("Identidad: ")
 
@@ -76,14 +60,11 @@ def agregar_heroe(lista) -> None:
     else:
         print("Datos inválidos, no se agregó el héroe.\n")
     
-    
-
-    
-
-
-        
-
 def eliminar_heroe(lista) -> None:
+    '''brief: Elimina un heroe de la lista segun su nombre.
+       lista: Lista de heroes.
+       retorno: No retorna nada.
+    '''
     nombre = input("Ingrese el nombre a eliminar: ")
     for i in range(len(lista)):
         if lista[i][0] == nombre:
@@ -93,7 +74,22 @@ def eliminar_heroe(lista) -> None:
     else:   
         print("No se encontró el héroe.\n")
 
+def mostrar_heroes(lista: list) -> None:
+    '''brief: Muestra los datos principales de cada heroe en formato estructurado.
+       lista: Lista de listas que contiene los heroes y sus atributos.
+       retorno: No retorna nada.
+    '''
+    for i in range(len(lista)):
+        print("Nombre:", lista[i][0], "\n",
+              "Identidad:", lista[i][1], "\n",
+              "Empresa:", lista[i][2], "\n",
+              "---------------------------")
+
 def ordenar_por_nombre(lista)->None:
+    '''brief: Ordena la lista de heroes por nombre en orden alfabetico.
+       lista: Lista de heroes.
+       retorno: No retorna nada.
+    '''
     for i in range(len(lista)-1):
         for j in range(i+1, len(lista)):
             if lista[i][0] > lista[j][0]:
@@ -102,35 +98,3 @@ def ordenar_por_nombre(lista)->None:
                 lista[j] = aux
     print("Lista ordenada por nombre.\n")
 
-def heroe_mas_alto(lista)->None:
-    mayor = lista[0]
-    for h in lista:
-        if h[3] > mayor[3]:
-            mayor = h
-    print(f"\nHéroe más alto:\n"
-          f"Nombre: {mayor[0]}\n"
-          f"Identidad: {mayor[1]}\n"
-          f"Empresa: {mayor[2]}\n"
-          f"Altura: {mayor[3]} cm\n")
-
-def heroe_mas_fuerte(lista)->None:
-    mayor = lista[0]
-    for h in lista:
-        if h[8] > mayor[8]:
-            mayor = h
-    print(f"\nHéroe más fuerte:\n"
-          f"Nombre: {mayor[0]}\n"
-          f"Identidad: {mayor[1]}\n"
-          f"Empresa: {mayor[2]}\n"
-          f"Fuerza: {mayor[8]}\n")
-
-def heroe_menos_pesado(lista)-> None:
-    menor = lista[0]
-    for h in lista:
-        if h[4] < menor[4]:
-            menor = h
-    print(f"\nHéroe menos pesado:\n"
-          f"Nombre: {menor[0]}\n"
-          f"Identidad: {menor[1]}\n"
-          f"Empresa: {menor[2]}\n"
-          f"Peso: {menor[4]} kg\n")

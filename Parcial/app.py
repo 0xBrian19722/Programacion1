@@ -1,6 +1,9 @@
-from funciones import (mostrar_heroes, agregar_heroe, eliminar_heroe,
-                       ordenar_por_nombre, heroe_mas_alto,
-                       heroe_mas_fuerte, heroe_menos_pesado)
+from abm import *
+from estadisticas import *
+from lista_heroes import *
+
+
+
 
 bandera = True
 lista_heroes = []  
@@ -20,7 +23,7 @@ while bandera:
     opcion = input("Seleccione una opcion: ")
 
     if opcion == "1":
-        from heroes import lista_heroes
+        from lista_heroes import lista_heroes
         print("\nLista de heroes importada correctamente.\n")
     elif opcion == "2":
         if lista_heroes:

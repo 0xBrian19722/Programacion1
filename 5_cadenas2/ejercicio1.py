@@ -7,7 +7,7 @@
 def contar_vocales(cadena: str) -> list:
     
     resultado = [["a", 0], ["e", 0], ["i", 0], ["o", 0], ["u", 0]]
-    
+
     for caracter in cadena:
         if caracter == "a" or caracter == "A":
             resultado[0][1] += 1
@@ -22,5 +22,5 @@ def contar_vocales(cadena: str) -> list:
 
     return resultado
 
-cadena = "murcielaguito"
-print(contar_vocales(cadena))
+palabra = "murcielaguito"
+print(contar_vocales(palabra))
