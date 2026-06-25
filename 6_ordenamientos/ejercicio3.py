@@ -18,7 +18,7 @@ def ordenar(apellido:list,estudiante:list,nota:list)-> list:
                 aux2 = estudiante[j]
                 estudiante[j] = estudiante[j+1]
                 estudiante[j+1] = aux2
-            elif apellido[j] == apellido[j+1] and estudiante[j] == estudiante [j+1] and nota[j] < nota [j+1]:
+            elif apellido[j] == apellido[j+1] and estudiante[j] == estudiante [j+1] and nota[j] < nota [j+1]:   
                 aux = apellido[j]
                 apellido[j] = apellido[j+1]
                 apellido[j+1] = aux

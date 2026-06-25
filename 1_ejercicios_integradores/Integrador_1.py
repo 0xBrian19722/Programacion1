@@ -25,6 +25,24 @@
 # 4- Calcular el promedio de precio unitario de todas las ventas.  
 # 5- Informar cuál fue la forma de pago más utilizada.
 
+def validar_opciones(msj:str,msj1:str,msj2:str)-> str:
+    ingreso = input(f"Ingrese: {msj}, {msj1}, {msj2}: ")
+    while ingreso != msj and ingreso != msj1 and ingreso != msj2:
+        ingreso = input(f"Error, ingrese {msj}, {msj1}, {msj2}: ")
+    return ingreso
+
+def validar_cantidad(msj:str,num:int,num1:int) -> int:
+    ingreso = int(input(f"{msj} ({num}-{num1}): "))
+    while ingreso < num or ingreso > num1:
+        ingreso = int(input(f"ERROR: {msj}, ({num}-{num1}): "))
+    return ingreso
+
+def validar_unitario(msj:str,num:int):
+    ingreso = int(input(f"{msj}, (<= {num}): "))
+    while ingreso <= num:
+        ingreso = int(input(f"ERROR: {msj}, (<= {num}): "))
+    return ingreso
+
 ventas = 0
 acu_unidades = 0
 total_bruto = 0
@@ -36,23 +54,18 @@ venta_mas_cara_tarjeta = 0
 suma_precios_unitarios = 0
 
 while ventas < 25:
-    tipo_producto = input("Ingrese el tipo de producto (alimento/limpieza/perfumeria): ")
-    while tipo_producto not in ["alimento", "limpieza", "perfumeria"]:
-        tipo_producto = input("ERROR: Ingrese nuevamente el producto válido: ")
+    tipo_producto = validar_opciones("alimento","limpieza","verduleria")
 
-    cantidad_de_unidades = int(input("Ingrese la cantidad de unidades (1-20): "))
-    while cantidad_de_unidades < 1 or cantidad_de_unidades > 20:
-        cantidad_de_unidades = int(input("ERROR: Ingrese nuevamente dentro del rango: "))
+    cantidad_de_unidades = validar_cantidad("Ingrese la canitdad: ",1,20)
     acu_unidades += cantidad_de_unidades
 
-    precio_unitario = int(input("Ingrese el precio unitario: "))
-    while precio_unitario <= 0:
-        precio_unitario = int(input("ERROR: Ingrese un precio válido: "))
+    precio_unitario = validar_unitario("Ingrese el precio unitario",0)
 
-    forma_de_pago = input("Ingrese la forma de pago (efectivo/tarjeta/transferencia): ")
-    while forma_de_pago not in ["efectivo", "tarjeta", "transferencia"]:
-        forma_de_pago = input("ERROR: Ingrese una forma de pago válida: ")
+    forma_de_pago = validar_opciones("efectivo","tarjeta","transferencia")
+    
 
+    
+ 
     
     subtotal = cantidad_de_unidades * precio_unitario          #TOTAL POR VUELTA
     total_bruto += subtotal
@@ -94,3 +107,22 @@ print("Total final con descuentos:", total_neto)
 print("Venta más cara con tarjeta:", venta_mas_cara_tarjeta)
 print("Promedio de precios unitarios:", promedio)
 print("Forma de pago más utilizada:", pago_mas_utilizado)
+
+   
+        
+
+
+
+
+
+
+
+def valid():
+    nombre = input("Ingrese: ")
+    while len(nombre) == 0:
+            nombre = input("Error: ")
+    return nombre        
+    
+        
+            
+

@@ -98,3 +98,5 @@ def ordenar_por_nombre(lista:list)->None:
               lista[j+1] = aux
     print("Lista ordenada por nombre.\n")
 
+
+

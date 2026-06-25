@@ -1,0 +1,158 @@
+[
+    {
+        "titulo": "The Witcher 3",
+        "genero": "RPG",
+        "desarrolladora": "CD Projekt Red",
+        "anio_lanzamiento": 2015,
+        "puntaje": 95,
+        "plataformas": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "premios": [
+            "Juego del A\u00c3\u00b1o 2015",
+            "Mejor RPG 2015",
+            "Mejor Narrativa"
+        ]
+    },
+    {
+        "titulo": "Minecraft",
+        "genero": "Sandbox",
+        "desarrolladora": "Mojang",
+        "anio_lanzamiento": 2011,
+        "puntaje": 93,
+        "plataformas": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch",
+            "Mobile"
+        ],
+        "premios": [
+            "Golden Joystick Award"
+        ]
+    },
+    {
+        "titulo": "League of Legends",
+        "genero": "MOBA",
+        "desarrolladora": "Riot Games",
+        "anio_lanzamiento": 2009,
+        "puntaje": 89,
+        "plataformas": [
+            "PC"
+        ],
+        "premios": [
+            "BAFTA Games Award"
+        ]
+    },
+    {
+        "titulo": "God of War",
+        "genero": "Accion",
+        "desarrolladora": "Santa Monica Studio",
+        "anio_lanzamiento": 2018,
+        "puntaje": 94,
+        "plataformas": [
+            "PlayStation",
+            "PC"
+        ],
+        "premios": [
+            "Juego del A\u00c3\u00b1o 2018",
+            "Mejor Direccion"
+        ]
+    },
+    {
+        "titulo": "Red Dead Redemption 2",
+        "genero": "Accion",
+        "desarrolladora": "Rockstar Games",
+        "anio_lanzamiento": 2018,
+        "puntaje": 97,
+        "plataformas": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "premios": [
+            "Mejor Narrativa",
+            "Mejor Banda Sonora",
+            "Critics Choice Award"
+        ]
+    },
+    {
+        "titulo": "Hollow Knight",
+        "genero": "Metroidvania",
+        "desarrolladora": "Team Cherry",
+        "anio_lanzamiento": 2017,
+        "puntaje": 90,
+        "plataformas": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "premios": [
+            "Indie Game Award"
+        ]
+    },
+    {
+        "titulo": "Cyberpunk 2077",
+        "genero": "RPG",
+        "desarrolladora": "CD Projekt Red",
+        "anio_lanzamiento": 2020,
+        "puntaje": 86,
+        "plataformas": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "premios": [
+            "Mejor Juego de Accion"
+        ]
+    },
+    {
+        "titulo": "Stardew Valley",
+        "genero": "Simulacion",
+        "desarrolladora": "ConcernedApe",
+        "anio_lanzamiento": 2016,
+        "puntaje": 89,
+        "plataformas": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch",
+            "Mobile"
+        ],
+        "premios": [
+            "Best Indie Game"
+        ]
+    },
+    {
+        "titulo": "Elden Ring",
+        "genero": "RPG",
+        "desarrolladora": "FromSoftware",
+        "anio_lanzamiento": 2022,
+        "puntaje": 96,
+        "plataformas": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "premios": [
+            "Juego del A\u00c3\u00b1o 2022",
+            "Mejor Direccion",
+            "Mejor RPG"
+        ]
+    },
+    {
+        "titulo": "Counter-Strike 2",
+        "genero": "Shooter",
+        "desarrolladora": "Valve",
+        "anio_lanzamiento": 2023,
+        "puntaje": 87,
+        "plataformas": [
+            "PC"
+        ],
+        "premios": []
+    }
+]

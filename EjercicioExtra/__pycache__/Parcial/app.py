@@ -10,15 +10,15 @@ lista_heroes = []
 
 while bandera:
     print('''\nMENU 
-[1]- Importar lista de heroes
-[2]- Mostrar heroes
-[3]- Agregar heroe
-[4]- Eliminar heroe
-[5]- Ordenar por nombre
-[6]- Ver heroe mas alto
-[7}- Ver heroe mas fuerte
-[8]- Ver heroe menos pesado                       
-[9]- Salir\n''')
+    [1]- Importar lista de heroes
+    [2]- Mostrar heroes
+    [3]- Agregar heroe
+    [4]- Eliminar heroe
+    [5]- Ordenar por nombre
+    [6]- Ver heroe mas alto
+    [7}- Ver heroe mas fuerte
+    [8]- Ver heroe menos pesado                       
+    [9]- Salir\n''')
 
     opcion = input("Seleccione una opcion: ")
 
