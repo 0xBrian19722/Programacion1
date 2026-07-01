@@ -94,7 +94,6 @@ estudiantes=[{
 ]
 
 
-print(estudiantes[9]["grupos"][0]["descripcion"])
 
 
 # 1-Listar los alumnos por orden ascendente de apellido, si se repite,  --------------------------------

@@ -6,7 +6,7 @@ import json
 
 
 def leer_json():
-    with open("practicadelmate/juegos.json","r") as archivo:
+    with open("practicadelmate/juegos.json","r") as archivo:     # modo de apertura r abe un archivo de texto solo para lectura
         datos = json.load(archivo)
         return(datos)
 
@@ -19,7 +19,7 @@ def eliminar_juego(datos):
             print(f"Se a eliminado {nombre} con exito")
 
 def guardar_json(datos):
-    with open("practicadelmate/juegos.json","w") as archivo:
+    with open("practicadelmate/juegos.json","w") as archivo:                       # modo de apertura w abre un archivo de texto para escritura (si existe lo sobrescribe)
         json.dump(datos, archivo, indent=4)            
 
 
@@ -28,6 +28,7 @@ lista_json = leer_json()
 
 for i in range(len(lista_json)):
     print(lista_json[i])
+    
     print("--------")
 
 
