@@ -40,6 +40,9 @@ def mostrar_menu():
             if lista_personajes:
                 modificar_personaje(lista_personajes,"Ingrese el nombre del" \
                 "personaje que desee modificar: ")
+            else:
+                print("Error, primero debe importar los datos (opcion 1)")
+
 
         elif opciones == "4":
             if lista_personajes:
@@ -78,15 +81,25 @@ def mostrar_menu():
 
             
 
-def mostrar_lista(lista:list):
+def mostrar_lista(lista:list)->str:
+    '''   
+    brief: Recorre la lista y arma un texto donde cada elemento 
+    aparece en una linea marcado con un guion. Devuelve un string 
+    con todos los elementos juntos
+    '''
     mensaje = ""
     for i in range(len(lista)):
         mensaje += f"  - {lista[i]}\n"
     return mensaje
         
+        
  
 
-def mostrar_personajes(lista:list):
+def mostrar_personajes(lista:list)->None:
+    '''
+    brief: Recorre una lista de diccionarios de personajes 
+    y muestra por terminal sus datos principales 
+    '''
     for i in range(len(lista)):
         mensaje = ""
         mensaje += f"Nombre: {lista[i]['nombre']}\n"
@@ -101,10 +114,18 @@ def mostrar_personajes(lista:list):
         print("----------------------")
         print(mensaje)
         print("----------------------")
+    
+    
+
 
 
 
 def mostrar_epoca(lista: list) -> None:
+    '''
+    brief: Muestra las epocas en la lista de personajes, 
+    permite elegir una y luego imprime los personajes que 
+    pertenecen a esa epoca.
+    '''
     lista_epoca = buscar_epoca(lista)
     for i in range(len(lista_epoca)):
         print(f"{i + 1}_ {lista_epoca[i]}")
@@ -116,26 +137,26 @@ def mostrar_epoca(lista: list) -> None:
         if lista[i]["epoca"] == epoca_elegida:
             mostrar_personajes([lista[i]])
 
+  
 
 
-def mostrar_nombres(lista:list):
+
+def mostrar_nombres(lista:list)-> None:
+    '''
+    brief: Recorre una lista de diccionario y muestra en pantalla
+    los nombres de cada uno enumerados en orden
+    '''
+
     for i in range(len(lista)):
         print(f"{i+1}_ {lista[i]['nombre']}\n")
 
 
 
 def guardar_indice(lista:list,clave:str,ingreso:str) -> int:
-    """
-    Retorna el índice de un personaje según el campo y valor indicados.
-
-    Parámetros:
-        lista (list): Lista de diccionarios de personajes.
-        clave (str): Campo por el cual buscar ("nombre", "epoca", etc).
-        ingreso (str): Valor a buscar.
-
-    Retorna:
-        int: Índice del personaje, o -1 si no se encuentra.
-    """
+    '''
+    brief: Recorre una lista de diccionarios y busca el indice del elemento
+    cuyo valor en la clave indicada coincide con el dato ingresado.
+    '''
     indice = -1
     for i in range(len(lista)):
         if lista[i][clave] == ingreso:
@@ -143,16 +164,14 @@ def guardar_indice(lista:list,clave:str,ingreso:str) -> int:
     return indice
 
 
+
+
 def mostrar_claves(lista: list) -> None:
-    """
-    Muestra las claves del diccionario numeradas.
-
-    Parámetros:
-        lista (list): Lista de diccionarios de personajes.
-
-    Retorna:
-        None
-    """
+    '''
+    brief: Obtiene las claves del diccionario de la lista 
+    y las muestra enumeradas en orden.
+    '''
+   
     claves = []
     for clave in lista[0]:
         claves.append(clave)
@@ -162,15 +181,11 @@ def mostrar_claves(lista: list) -> None:
 
 
 def modificar_lista(lista_campo: list) -> None:
-    """
-    Muestra los elementos de una lista anidada numerados y permite modificar uno.
+    '''
+    brief: Muestra los elementos de la lista , permite al usuario
+    elegir uno por numero y reemplazarlo con un nuevo valor ingresado.
+    '''
 
-    Parámetros:
-        lista_campo (list): Lista de logros o eventos a modificar.
-
-    Retorna:
-        None
-    """
     for i in range(len(lista_campo)):
         print(f"{i + 1}_ {lista_campo[i]}")
     indice = validar_opcion("Ingrese el numero del dato a moficar: ", 1, len(lista_campo))
@@ -180,16 +195,12 @@ def modificar_lista(lista_campo: list) -> None:
 
 
 def modificar_valor(personaje:dict,valor:int,min:int,max:int)->None:
-    """
-    Modifica un valor específico de un personaje según el número de valor elegido.
+    '''
+    brief: Permite modificar el valor de un clave específico del diccionario, 
+    si la clave contiene una lista, llama a la función modificar_lista. Si es el año
+    de nacimiento valida que este dentro de un rango. 
+    '''
 
-    Parámetros:
-        personaje (dict): Diccionario del personaje a modificar.
-        valor (int): Número del valor a modificar (1 al 7).
-
-    Retorna:
-        None
-    """
     claves = []
     for clave in personaje:
         claves.append(clave)
@@ -208,17 +219,12 @@ def modificar_valor(personaje:dict,valor:int,min:int,max:int)->None:
 
 
 def modificar_personaje(lista:list, mensaje:str) -> None:
-    """
-    Busca un personaje por nombre y permite modificar cualquiera de sus campos.
-    Si no lo encuentra sigue pidiendo hasta encontrarlo.
+    '''
+    brief: Permite modificar los datos de un personaje dentro de una lista,
+    muestra los nombres disponibles, solicita el nombre a modificar, valida que
+    exista y luego permite elegir que campo actualizar 
+    '''
 
-    Parámetros:
-        lista (list): Lista de diccionarios de personajes.
-        mensaje (str): Mensaje que se muestra al pedir el nombre.
-
-    Retorna:
-        None
-    """
     mostrar_nombres(lista)
     bandera = True
     while bandera:
@@ -240,16 +246,12 @@ def modificar_personaje(lista:list, mensaje:str) -> None:
 
 
 def eliminar_personaje(lista: list) -> None:
-    """
-    Busca un personaje por nombre y lo elimina de la lista.
-    Si no lo encuentra sigue pidiendo hasta encontrarlo.
+    '''
+    brief: Permite eliminar un personaje de la lista, muestra los nombres
+    disponibles, solicita el nombre a eliminar, valida que exista, muestra
+    sus datos y luego lo elimina de la lista.
+    '''
 
-    Parámetros:
-        lista (list): Lista de diccionarios de personajes.
-
-    Retorna:
-        None
-    """
     mostrar_nombres(lista)
     bandera = True
     while bandera:
@@ -269,16 +271,12 @@ def eliminar_personaje(lista: list) -> None:
 
 
 def ordenar_personajes(lista: list) -> None:
-    """
-    Crea una copia de la lista y la ordena por el criterio elegido por el usuario
-    usando bubble sort.
+    '''
+    brief: Ordena una copia de la lista de personajes segun el criterio elegido
+    (año de nacimiento, nombre o epoca) utilizando el algoritmo
+    bubble sort, y luego muestra los personajes ordenados en pantalla
+    '''
 
-    Parámetros:
-        lista (list): Lista de diccionarios de personajes.
-
-    Retorna:
-        None
-    """
     print('''
         1_ Año de nacimiento
         2_ Nombre

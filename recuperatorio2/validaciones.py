@@ -25,11 +25,11 @@ def validar_numero(cadena: str)->bool:
     return valido
 
 def validar_opcion(mensaje:str,min:int,max:int)->int:
-    """
+    '''
     Valida que el usuario ingrese un número dentro del rango indicado.
     Parámetros: mensaje (str) - texto a mostrar, min (int) - valor mínimo, max (int) - valor máximo
     Retorno: opcion (int) - número válido ingresado por el usuario
-    """
+    '''
     opcion_valida = False
     opcion = 0
 

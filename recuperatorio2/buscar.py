@@ -1,4 +1,8 @@
 def buscar_epoca(lista:list)->list:
+    '''
+    brief: Recorre la lista de personajes y construye una lista con todas las
+    epocas distintas encontradas.
+    '''
     bandera = False
     lista_epoca = []
     for i in range(len(lista)):
@@ -12,15 +16,10 @@ def buscar_epoca(lista:list)->list:
 
 
 def buscar_clave(lista:list,clave:str,ingreso: str)->bool:
-    """
-    Busca un personaje por cualquier campo y retorna si existe.
-    Parámetros:
-        lista (list): Lista de diccionarios de personajes.
-        campo (str): Campo por el cual buscar ("nombre", "epoca", etc).
-        valor (str): Valor a buscar.
-    Retorna:
-        bool: True si existe, False si no.
-    """
+    '''
+    brief: Recorre una lista de diccionarios y verifica si existe algun elemento
+    que coincida con el valor en la clave indicada con el dato ingresado.
+    '''
     bandera = False
     for i in range(len(lista)):
         if lista[i][clave] == ingreso:
@@ -28,18 +27,15 @@ def buscar_clave(lista:list,clave:str,ingreso: str)->bool:
     return bandera
 
 
+
+
 def buscar_max_min(lista: list, clave: str, tipo: str) -> int:
-    """
-    Busca el personaje con mayor o menor cantidad de elementos en un campo lista.
+    '''
+    brief: Busca dentro de una lista de diccionarios el indice del personaje
+    que tenga la mayor o menor cantidad de elementos en el valor de la
+    clave indicada, segun el tipo solicitado ("max" o "min").
+    '''
 
-    Parámetros:
-        lista (list): Lista de diccionarios de personajes.
-        clave (str): Campo a analizar ("logros" o "eventos").
-        tipo (str): "max" para buscar el mayor, "min" para buscar el menor.
-
-    Retorna:
-        int: Índice del personaje encontrado.
-    """
     resultado = len(lista[0][clave])
     indice = 0
 
