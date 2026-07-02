@@ -16,11 +16,7 @@ def validar_numero(cadena: str)->bool:
                 inicio = 1
         for i in range(inicio, len(cadena)):
             caracter = cadena[i]
-            if caracter == ".":
-                punto += 1
-                if punto > 1:
-                    valido = False
-            elif caracter < "0" or caracter > "9":
+            if caracter < "0" or caracter > "9":
                 valido = False
     return valido
 
